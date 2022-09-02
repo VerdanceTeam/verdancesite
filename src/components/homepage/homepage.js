@@ -4,72 +4,63 @@ import { Helmet } from 'react-helmet';
 import { useEffect, useRef, useState, useMemo, useCallback } from 'react';
 import * as styles from './homepage.module.scss';
 
+import heroImage from '../../images/verdance-hero.png';
+
 const Homepage = () => {
-  // const dataProductImageCarousel = useStaticQuery(graphql`
-  //   {
-  //     allContentfulFeaturettes(sort: { order: ASC, fields: order }) {
-  //       nodes {
-  //         icon {
-  //           file {
-  //             url
-  //           }
-  //         }
-  //         subtitle {
-  //           subtitle
-  //         }
-  //         title
-  //       }
-  //     }
-  //     allContentfulProductImageCarousel(sort: { order: ASC, fields: order }) {
-  //       edges {
-  //         node {
-  //           id
-  //           children {
-  //             id
-  //           }
-  //           img {
-  //             file {
-  //               url
-  //             }
-  //           }
-  //         }
-  //       }
-  //     }
-  //     allContentfulTeamMember(sort: { order: ASC, fields: order }) {
-  //       nodes {
-  //         photo {
-  //           file {
-  //             url
-  //           }
-  //         }
-  //         name
-  //         order
-  //         title
-  //         bio {
-  //           bio
-  //         }
-  //       }
-  //     }
-  //     allContentfulPartner(sort: { order: ASC, fields: order }) {
-  //       nodes {
-  //         img {
-  //           file {
-  //             url
-  //           }
-  //         }
-  //         order
-  //       }
-  //     }
-  //   }
-  // `);
-  // const homepageData = dataProductImageCarousel;
+  const dataHomepage = useStaticQuery(graphql`
+    {
+      allContentfulIntroSection {
+        edges {
+          node {
+            id
+            largeText
+            smallText
+          }
+        }
+      }
+      allContentfulWhatWeDoSection {
+        edges {
+          node {
+            smallText
+            largeText
+            columnOneIcon {
+              file {
+                url
+              }
+            }
+            columnOneTitle
+            columnOneBody {
+              raw
+            }
+            columnTwoIcon {
+              file {
+                url
+              }
+            }
+            columnTwoTitle
+            columnTwoBody {
+              raw
+            }
+            columnThreeIcon {
+              file {
+                url
+              }
+            }
+            columnThreeTitle
+            columnThreeBody {
+              raw
+            }
+          }
+        }
+      }
+    }
+  `);
 
-  // const homepageProductImageCarousel =
-  //   homepageData.allContentfulProductImageCarousel.edges;
-  // const homepageFeaturettes = homepageData.allContentfulFeaturettes.nodes;
-  // const homepageTeamMembers = homepageData.allContentfulTeamMember.nodes;
-  // const homepagePartners = homepageData.allContentfulPartner.nodes;
-
+  const homepageIntroSection =
+    dataHomepage.allContentfulIntroSection.edges[0].node;
+  const homepageWhatWeDoSection =
+    dataHomepage.allContentfulWhatWeDoSection.edges[0].node;
+  console.log('homepageIntroSection = ', homepageIntroSection);
   return (
     <div>
       <Helmet>
@@ -121,12 +112,19 @@ const Homepage = () => {
           </h1>
         </section>
         <section className={styles.homepageSection}>
-          <div className={styles.homepageSectionContent}></div>
+          <div className={styles.homepageSectionContent}>
+            <div className={styles.homepageIntroContainer}>
+              <h4>{homepageIntroSection.smallText}</h4>
+              <h2>{homepageIntroSection.largeText}</h2>
+            </div>
+          </div>
         </section>
-        <section
-          className={`${styles.homepageSection} ${styles.homepageSectionGreen}`}
-        >
-          <div className={styles.homepageSectionContent}></div>
+        <section className={styles.homepageSection}>
+          <div
+            className={`${styles.homepageSectionContent} ${styles.homepageSectionGreen}`}
+          >
+            <img src={heroImage} />
+          </div>
         </section>
         <section className={styles.homepageSection}>
           <div className={styles.homepageSectionContent}></div>

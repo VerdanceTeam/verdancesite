@@ -156,9 +156,11 @@ const Homepage = () => {
     href: "../../images/android-chrome-512x512.png"
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("main", {
     className: _homepage_module_scss__WEBPACK_IMPORTED_MODULE_3__.homepageContent
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("section", {
+    className: _homepage_module_scss__WEBPACK_IMPORTED_MODULE_3__.homepageSection
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("h1", {
-    className: _homepage_module_scss__WEBPACK_IMPORTED_MODULE_3__.homepageTitle
-  }, "Verdance"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("section", {
+    className: `${_homepage_module_scss__WEBPACK_IMPORTED_MODULE_3__.homepageSectionContent} ${_homepage_module_scss__WEBPACK_IMPORTED_MODULE_3__.homepageTitle}`
+  }, "Verdance")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("section", {
     className: _homepage_module_scss__WEBPACK_IMPORTED_MODULE_3__.homepageSection
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", {
     className: _homepage_module_scss__WEBPACK_IMPORTED_MODULE_3__.homepageSectionContent

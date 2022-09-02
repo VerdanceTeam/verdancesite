@@ -5,7 +5,7 @@
 }
 
 .homepageTitle {
-  font-size: 134px;
+  // font-size: 134px;
 }
 
 .homepageSection {
@@ -14,7 +14,7 @@
 }
 
 .homepageSectionGreen {
-  background-color: $primary-green;
+  background-color: $secondary-green;
 }
 
 .homepageSectionYellow {
@@ -24,5 +24,10 @@
 .homepageSectionContent {
   width: 100%;
   max-width: $max-content-width;
-  padding: 0 64px;
+  margin: 0 64px;
+}
+
+.homepageIntroContainer {
+  display: grid;
+  grid-template-columns: 50% 50%;
 }
