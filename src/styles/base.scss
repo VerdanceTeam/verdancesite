@@ -2,6 +2,14 @@
 
 $max-content-width: 1440px;
 
+// colors
+
+$primary-grey: #D3DAE9;
+$secondary-grey: #B7C2DA;
+$primary-green: #012C12;
+$secondary-green: #66DE66;
+$secondary-yellow: #E5FD52;
+
 // breakpoints
 
 // base text styling
@@ -14,37 +22,55 @@ h1 {
 h2 {
   font-family: 'UntitledSerif', Arial, sans-serif;
   font-size: 72px;
+  line-height: 110%;
+  letter-spacing: -0.05em;
 }
 
 h3 {
   font-family: 'UntitledSans', Times, serif;
   font-size: 32px;
+  line-height: 110%;
+  letter-spacing: -0.03em;
 }
 
 h4 {
   font-family: 'UntitledSans', Times, serif;
   font-size: 28px;
+  line-height: 110%;
 }
 
 h5 {
   font-family: 'SpaceMono', Arial, sans-serif;
   font-size: 14px;
   text-transform: uppercase;
+  line-height: 150%;
+  letter-spacing: 0.1em;
 }
 
 p {
   font-family: 'UntitledSerif', Arial, sans-serif;
   font-size: 24px;
+  line-height: 130%;
+}
+
+a {
+  font-family: 'UntitledSans', Times, serif;
+  font-size: 28px;
+  line-height: 110%;
+  text-underline-offset: 8px;
+}
+
+h1, h2, h3, h4, h5, p, a {
+  color: $primary-green;
 }
 
 img {
-  width: 100%;
+  width: fit-content;
 }
 
-// colors
 
-$primary-grey: #D3DAE9;
-$secondary-grey: #B7C2DA;
-$primary-green: #012C12;
-$secondary-green: #66DE66;
-$secondary-yellow: #E5FD52;
+// spacers
+
+@mixin paddingBottom($multiple) {
+  padding-bottom: #{$multiple * 8}px;
+}

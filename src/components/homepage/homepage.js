@@ -16,6 +16,14 @@ const Homepage = () => {
             id
             largeText
             smallText
+            icon {
+              file {
+                url
+              }
+            }
+            cta {
+              cta
+            }
           }
         }
       }
@@ -162,7 +170,17 @@ const Homepage = () => {
         <section className={styles.homepageSection}>
           <div className={styles.homepageSectionContent}>
             <div className={styles.twoColumn}>
-              <h4>{homepageIntroSection.smallText}</h4>
+              <div className={styles.contentAlignBottom}>
+                <img
+                  className={styles.bottomPaddingOne}
+                  src={homepageIntroSection.icon.file.url}
+                />
+                <h4 className={styles.bottomPaddingTwo}>
+                  {homepageIntroSection.smallText}
+                </h4>
+                <Markdown value={homepageIntroSection.cta.cta} />
+              </div>
+
               <h2>{homepageIntroSection.largeText}</h2>
             </div>
           </div>
@@ -171,7 +189,7 @@ const Homepage = () => {
           <div
             className={`${styles.homepageSectionContent} ${styles.homepageSectionGreen}`}
           >
-            <img src={heroImage} />
+            <img className={styles.heroImage} src={heroImage} />
           </div>
         </section>
         <section className={styles.homepageSection}>

@@ -5,13 +5,42 @@
 }
 
 .homepageTitle {
-  // font-size: 134px;
+  @include paddingBottom(16)
 }
 
 .homepageSection {
   display: flex;
   justify-content: center;
+  padding-top: 96px;
 }
+
+.heroImage {
+  width: 100%;;
+}
+
+.homepageSectionContent {
+  width: 100%;
+  max-width: $max-content-width;
+  margin: 0 64px;
+}
+
+.contentAlignBottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+
+// Padding bottom
+
+.bottomPaddingOne {
+  @include paddingBottom(2)
+}
+
+.bottomPaddingTwo {
+  @include paddingBottom(6)
+}
+
+// Background colors
 
 .homepageSectionGreen {
   background-color: $secondary-green;
@@ -25,11 +54,7 @@
   background-color: $secondary-grey;
 }
 
-.homepageSectionContent {
-  width: 100%;
-  max-width: $max-content-width;
-  margin: 0 64px;
-}
+// Layout
 
 .twoColumn {
   display: grid;
