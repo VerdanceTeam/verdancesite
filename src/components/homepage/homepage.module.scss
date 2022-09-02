@@ -21,13 +21,22 @@
   background-color: $secondary-yellow;
 }
 
+.homepageSectionDarkGrey {
+  background-color: $secondary-grey;
+}
+
 .homepageSectionContent {
   width: 100%;
   max-width: $max-content-width;
   margin: 0 64px;
 }
 
-.homepageIntroContainer {
+.twoColumn {
   display: grid;
   grid-template-columns: 50% 50%;
+}
+
+.threeColumn {
+  display: grid;
+  grid-template-columns: 33.33% 33.33% 33.33%;
 }

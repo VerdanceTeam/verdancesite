@@ -1,6 +1,7 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import * as React from 'react';
 import { Helmet } from 'react-helmet';
+import Markdown from 'marked-react';
 import { useEffect, useRef, useState, useMemo, useCallback } from 'react';
 import * as styles from './homepage.module.scss';
 
@@ -30,7 +31,7 @@ const Homepage = () => {
             }
             columnOneTitle
             columnOneBody {
-              raw
+              columnOneBody
             }
             columnTwoIcon {
               file {
@@ -39,7 +40,7 @@ const Homepage = () => {
             }
             columnTwoTitle
             columnTwoBody {
-              raw
+              columnTwoBody
             }
             columnThreeIcon {
               file {
@@ -48,7 +49,49 @@ const Homepage = () => {
             }
             columnThreeTitle
             columnThreeBody {
-              raw
+              columnThreeBody
+            }
+          }
+        }
+      }
+      allContentfulWorkWithUsSection {
+        edges {
+          node {
+            largeText
+            smallText {
+              smallText
+            }
+            image {
+              file {
+                url
+              }
+            }
+          }
+        }
+      }
+      allContentfulPartnerSection {
+        edges {
+          node {
+            title
+            partnerLogos {
+              file {
+                url
+              }
+            }
+          }
+        }
+      }
+      allContentfulFooterSection {
+        edges {
+          node {
+            largeText
+            smallText {
+              smallText
+            }
+            image {
+              file {
+                url
+              }
             }
           }
         }
@@ -60,7 +103,12 @@ const Homepage = () => {
     dataHomepage.allContentfulIntroSection.edges[0].node;
   const homepageWhatWeDoSection =
     dataHomepage.allContentfulWhatWeDoSection.edges[0].node;
-  console.log('homepageIntroSection = ', homepageIntroSection);
+  const homepageWorkWithUsSection =
+    dataHomepage.allContentfulWorkWithUsSection.edges[0].node;
+  const homepagePartnerSection =
+    dataHomepage.allContentfulPartnerSection.edges[0].node;
+  const homepageFooterSection =
+    dataHomepage.allContentfulFooterSection.edges[0].node;
   return (
     <div>
       <Helmet>
@@ -113,7 +161,7 @@ const Homepage = () => {
         </section>
         <section className={styles.homepageSection}>
           <div className={styles.homepageSectionContent}>
-            <div className={styles.homepageIntroContainer}>
+            <div className={styles.twoColumn}>
               <h4>{homepageIntroSection.smallText}</h4>
               <h2>{homepageIntroSection.largeText}</h2>
             </div>
@@ -127,18 +175,86 @@ const Homepage = () => {
           </div>
         </section>
         <section className={styles.homepageSection}>
-          <div className={styles.homepageSectionContent}></div>
+          <div className={styles.homepageSectionContent}>
+            <h5>what we do</h5>
+            <div className={styles.twoColumn}>
+              <h2>{homepageWhatWeDoSection.largeText}</h2>
+              <h4>{homepageWhatWeDoSection.smallText}</h4>
+            </div>
+            <div className={styles.threeColumn}>
+              <div>
+                <img src={homepageWhatWeDoSection.columnOneIcon.file.url} />
+                <h3>{homepageWhatWeDoSection.columnOneTitle}</h3>
+                <p>
+                  <Markdown
+                    value={homepageWhatWeDoSection.columnOneBody.columnOneBody}
+                  />
+                </p>
+              </div>
+              <div>
+                <img src={homepageWhatWeDoSection.columnTwoIcon.file.url} />
+                <h3>{homepageWhatWeDoSection.columnTwoTitle}</h3>
+                <p>
+                  <Markdown
+                    value={homepageWhatWeDoSection.columnTwoBody.columnTwoBody}
+                  />
+                </p>
+              </div>
+              <div>
+                <img src={homepageWhatWeDoSection.columnThreeIcon.file.url} />
+                <h3>{homepageWhatWeDoSection.columnThreeTitle}</h3>
+                <p>
+                  <Markdown
+                    value={
+                      homepageWhatWeDoSection.columnThreeBody.columnThreeBody
+                    }
+                  />
+                </p>
+              </div>
+            </div>
+          </div>
         </section>
         <section
           className={`${styles.homepageSection} ${styles.homepageSectionYellow} ${styles.homepageSectionFullWidth}`}
         >
-          <div className={styles.homepageSectionContent}></div>
+          <div className={styles.homepageSectionContent}>
+            <h5>work with us</h5>
+            <div>
+              <div>
+                <h2>{homepageWorkWithUsSection.title}</h2>
+                <h3>
+                  <Markdown
+                    value={homepageWorkWithUsSection.smallText.smallText}
+                  />
+                </h3>
+              </div>
+              <img src={homepageWorkWithUsSection.image.file.url} />
+            </div>
+          </div>
         </section>
         <section className={styles.homepageSection}>
-          <div className={styles.homepageSectionContent}></div>
+          <div className={styles.homepageSectionContent}>
+            <h5>who we work with</h5>
+            <h2>{homepagePartnerSection.title}</h2>
+            <div>
+              {homepagePartnerSection.partnerLogos.map((item, index) => (
+                <img key={index} src={item.file.url} />
+              ))}
+            </div>
+          </div>
         </section>
-        <section className={styles.homepageSection}>
-          <div className={styles.homepageSectionContent}></div>
+        <section
+          className={`${styles.homepageSection} ${styles.homepageSectionDarkGrey} ${styles.homepageSectionFullWidth}`}
+        >
+          <div className={styles.homepageSectionContent}>
+            <div>
+              <h1>{homepageFooterSection.largeText}</h1>
+              <h4>
+                <Markdown value={homepageFooterSection.smallText.smallText} />
+              </h4>
+            </div>
+            <img src={homepageFooterSection.image.file.url} />
+          </div>
         </section>
       </main>
     </div>
