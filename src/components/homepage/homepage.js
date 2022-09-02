@@ -2,90 +2,76 @@ import { graphql, useStaticQuery } from 'gatsby';
 import * as React from 'react';
 import { Helmet } from 'react-helmet';
 import { useEffect, useRef, useState, useMemo, useCallback } from 'react';
-import './homepage.scss';
-
-import 'swiper/css';
-
-import AssetSwiper from '../assetSwiper/assetSwiper';
-import TeamSwiper from '../teamSwiper/teamSwiper';
-
-import twitterLogo from '../../images/Icon-Twitter.svg';
-import discordLogo from '../../images/discord.svg';
-import lunchboxLogo from '../../images/lunchbox-logo.svg';
-import lunchboxFooterLogo from '../../images/lunchbox-logo-footer.svg';
-import heroVideo from '../../images/hero-vid.mp4';
-import heroPosterImg from '../../images/poster-image.jpg';
-import heroStaticImgMobile from '../../images/static-hero-mobile.jpg';
-import lunchboxMobileLogo from '../../images/logo-lunchbox-horizontal-mobile.svg';
+import * as styles from './homepage.module.scss';
 
 const Homepage = () => {
-  const dataProductImageCarousel = useStaticQuery(graphql`
-    {
-      allContentfulFeaturettes(sort: { order: ASC, fields: order }) {
-        nodes {
-          icon {
-            file {
-              url
-            }
-          }
-          subtitle {
-            subtitle
-          }
-          title
-        }
-      }
-      allContentfulProductImageCarousel(sort: { order: ASC, fields: order }) {
-        edges {
-          node {
-            id
-            children {
-              id
-            }
-            img {
-              file {
-                url
-              }
-            }
-          }
-        }
-      }
-      allContentfulTeamMember(sort: { order: ASC, fields: order }) {
-        nodes {
-          photo {
-            file {
-              url
-            }
-          }
-          name
-          order
-          title
-          bio {
-            bio
-          }
-        }
-      }
-      allContentfulPartner(sort: { order: ASC, fields: order }) {
-        nodes {
-          img {
-            file {
-              url
-            }
-          }
-          order
-        }
-      }
-    }
-  `);
-  const homepageData = dataProductImageCarousel;
+  // const dataProductImageCarousel = useStaticQuery(graphql`
+  //   {
+  //     allContentfulFeaturettes(sort: { order: ASC, fields: order }) {
+  //       nodes {
+  //         icon {
+  //           file {
+  //             url
+  //           }
+  //         }
+  //         subtitle {
+  //           subtitle
+  //         }
+  //         title
+  //       }
+  //     }
+  //     allContentfulProductImageCarousel(sort: { order: ASC, fields: order }) {
+  //       edges {
+  //         node {
+  //           id
+  //           children {
+  //             id
+  //           }
+  //           img {
+  //             file {
+  //               url
+  //             }
+  //           }
+  //         }
+  //       }
+  //     }
+  //     allContentfulTeamMember(sort: { order: ASC, fields: order }) {
+  //       nodes {
+  //         photo {
+  //           file {
+  //             url
+  //           }
+  //         }
+  //         name
+  //         order
+  //         title
+  //         bio {
+  //           bio
+  //         }
+  //       }
+  //     }
+  //     allContentfulPartner(sort: { order: ASC, fields: order }) {
+  //       nodes {
+  //         img {
+  //           file {
+  //             url
+  //           }
+  //         }
+  //         order
+  //       }
+  //     }
+  //   }
+  // `);
+  // const homepageData = dataProductImageCarousel;
 
-  const homepageProductImageCarousel =
-    homepageData.allContentfulProductImageCarousel.edges;
-  const homepageFeaturettes = homepageData.allContentfulFeaturettes.nodes;
-  const homepageTeamMembers = homepageData.allContentfulTeamMember.nodes;
-  const homepagePartners = homepageData.allContentfulPartner.nodes;
+  // const homepageProductImageCarousel =
+  //   homepageData.allContentfulProductImageCarousel.edges;
+  // const homepageFeaturettes = homepageData.allContentfulFeaturettes.nodes;
+  // const homepageTeamMembers = homepageData.allContentfulTeamMember.nodes;
+  // const homepagePartners = homepageData.allContentfulPartner.nodes;
 
   return (
-    <div className='homepage' onScroll={handleScroll} ref={homepageRef}>
+    <div>
       <Helmet>
         <title>Verdance</title>
         <meta name='title' content='Verdance' />
@@ -126,9 +112,36 @@ const Homepage = () => {
           href='../../images/android-chrome-512x512.png'
         />
       </Helmet>
-      <main>
-        <h1>Verdance</h1>
-        <section></section>
+      <main className={styles.homepageContent}>
+        <section className={styles.homepageSection}>
+          <h1
+            className={`${styles.homepageSectionContent} ${styles.homepageTitle}`}
+          >
+            Verdance
+          </h1>
+        </section>
+        <section className={styles.homepageSection}>
+          <div className={styles.homepageSectionContent}></div>
+        </section>
+        <section
+          className={`${styles.homepageSection} ${styles.homepageSectionGreen}`}
+        >
+          <div className={styles.homepageSectionContent}></div>
+        </section>
+        <section className={styles.homepageSection}>
+          <div className={styles.homepageSectionContent}></div>
+        </section>
+        <section
+          className={`${styles.homepageSection} ${styles.homepageSectionYellow} ${styles.homepageSectionFullWidth}`}
+        >
+          <div className={styles.homepageSectionContent}></div>
+        </section>
+        <section className={styles.homepageSection}>
+          <div className={styles.homepageSectionContent}></div>
+        </section>
+        <section className={styles.homepageSection}>
+          <div className={styles.homepageSectionContent}></div>
+        </section>
       </main>
     </div>
   );

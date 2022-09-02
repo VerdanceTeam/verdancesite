@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     siteUrl: 'https://www.yourdomain.tld',
-    title: 'Lunchbox',
+    title: 'Verdance',
   },
   plugins: [
     `gatsby-plugin-image`,
@@ -10,18 +10,12 @@ module.exports = {
     {
       resolve: 'gatsby-source-contentful',
       options: {
-        accessToken: '1UTRfSb-ddPB0qtqQmT5-TEyCZVMOIjWdGsbmM3fdwU',
-        spaceId: '5ywyur77omkg',
+        accessToken: 'FfLO4BfiplcMt4DUwyerdEkTyaokfIVrOyO1go68cqU',
+        spaceId: 'dsterl7huwlo',
       },
     },
     'gatsby-plugin-sass',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sitemap',
-    {
-      resolve: 'gatsby-plugin-manifest',
-      options: {
-        icon: 'src/images/android-chrome-512x512.png',
-      },
-    },
   ],
 };

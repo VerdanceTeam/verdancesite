@@ -1,0 +1,28 @@
+@import '../../styles/base.scss';
+
+.homepageContent {
+  background-color: $primary-grey;
+}
+
+.homepageTitle {
+  font-size: 134px;
+}
+
+.homepageSection {
+  display: flex;
+  justify-content: center;
+}
+
+.homepageSectionGreen {
+  background-color: $primary-green;
+}
+
+.homepageSectionYellow {
+  background-color: $secondary-yellow;
+}
+
+.homepageSectionContent {
+  width: 100%;
+  max-width: $max-content-width;
+  padding: 0 64px;
+}
