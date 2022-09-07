@@ -134,10 +134,7 @@ const Homepage = () => {
           property='og:description'
           content='We partner with government to build resilient and respectful digital services.'
         />
-        <meta
-          property='og:image'
-          content='https://images.ctfassets.net/5ywyur77omkg/350kVpMKxm8FpSUgXbWtg/fdd44c522593d946ea250148bea99bf3/lunchbox-meta.jpg'
-        />
+        <meta property='og:image' content='NEEDS-IMAGE-URL' />
 
         <meta
           property='twitter:card'
@@ -149,10 +146,7 @@ const Homepage = () => {
           property='twitter:description'
           content='We partner with government to build resilient and respectful digital services.'
         />
-        <meta
-          property='twitter:image'
-          content='https://images.ctfassets.net/5ywyur77omkg/350kVpMKxm8FpSUgXbWtg/fdd44c522593d946ea250148bea99bf3/lunchbox-meta.jpg'
-        />
+        <meta property='twitter:image' content='NEEDS-IMAGE-URL' />
 
         <link
           rel='apple-touch-icon'
