@@ -5,7 +5,7 @@
 }
 
 .homepageTitle {
-  @include paddingBottom(16)
+  // @include paddingBottom()
 }
 
 .homepageSection {
@@ -52,6 +52,18 @@
 
 .homepageSectionDarkGrey {
   background-color: $secondary-grey;
+}
+
+.partnerLogosContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.partnerLogo{
+  margin-right: 130px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 // Layout

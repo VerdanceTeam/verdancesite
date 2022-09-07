@@ -254,9 +254,11 @@ const Homepage = () => {
           <div className={styles.homepageSectionContent}>
             <h5>who we work with</h5>
             <h2>{homepagePartnerSection.title}</h2>
-            <div>
+            <div className={styles.partnerLogosContainer}>
               {homepagePartnerSection.partnerLogos.map((item, index) => (
-                <img key={index} src={item.file.url} />
+                <div className={styles.partnerLogo}>
+                  <img key={index} src={item.file.url} />
+                </div>
               ))}
             </div>
           </div>

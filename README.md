@@ -1,5 +1,5 @@
 <h1 align="center">
-  lunchbox
+  verdance
 </h1>
 
 ## 🚀 Quick start
@@ -9,7 +9,7 @@
     Navigate into your new site’s directory and start it up.
 
     ```shell
-    cd lunchbox/
+    cd verdancesite/
     npm run develop
     ```
 
@@ -22,8 +22,8 @@
     Each page that exists in the `/src/pages` folder automagically creates a new page with an associated path, so right now we have:
 
     ```
-    /index.js --> lunchboxgame.io/
-    /404.js --> lunchboxgame.io/404
+    /index.js --> verdance.co/
+    /404.js --> verdance.co/404
     ```
 
     Each page then renders the `<Layout />` component as the wrapper for the page and then has a content component like `<Homepage />` or `<Roadmap />`. Each component has an associated SCSS file for styling purposes. We use [BEM](https://css-tricks.com/bem-101/) methodology for styling.
