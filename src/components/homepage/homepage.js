@@ -202,7 +202,9 @@ const Homepage = () => {
             <div className={styles.threeColumn}>
               <div>
                 <img src={homepageWhatWeDoSection.columnOneIcon.file.url} />
-                <h3>{homepageWhatWeDoSection.columnOneTitle}</h3>
+                <h3 className={styles.columnTitle}>
+                  {homepageWhatWeDoSection.columnOneTitle}
+                </h3>
                 <p>
                   <Markdown
                     value={homepageWhatWeDoSection.columnOneBody.columnOneBody}
@@ -211,7 +213,9 @@ const Homepage = () => {
               </div>
               <div>
                 <img src={homepageWhatWeDoSection.columnTwoIcon.file.url} />
-                <h3>{homepageWhatWeDoSection.columnTwoTitle}</h3>
+                <h3 className={styles.columnTitle}>
+                  {homepageWhatWeDoSection.columnTwoTitle}
+                </h3>
                 <p>
                   <Markdown
                     value={homepageWhatWeDoSection.columnTwoBody.columnTwoBody}
@@ -220,7 +224,9 @@ const Homepage = () => {
               </div>
               <div>
                 <img src={homepageWhatWeDoSection.columnThreeIcon.file.url} />
-                <h3>{homepageWhatWeDoSection.columnThreeTitle}</h3>
+                <h3 className={styles.columnTitle}>
+                  {homepageWhatWeDoSection.columnThreeTitle}
+                </h3>
                 <p>
                   <Markdown
                     value={
@@ -237,7 +243,7 @@ const Homepage = () => {
         >
           <div className={styles.homepageSectionContent}>
             <h5>work with us</h5>
-            <div>
+            <div className={styles.twoColumn}>
               <div>
                 <h2>{homepageWorkWithUsSection.title}</h2>
                 <h3>
@@ -267,13 +273,15 @@ const Homepage = () => {
           className={`${styles.homepageSection} ${styles.homepageSectionDarkGrey} ${styles.homepageSectionFullWidth}`}
         >
           <div className={styles.homepageSectionContent}>
-            <div>
-              <h1>{homepageFooterSection.largeText}</h1>
-              <h4>
-                <Markdown value={homepageFooterSection.smallText.smallText} />
-              </h4>
+            <div className={styles.twoColumn}>
+              <div>
+                <h1>{homepageFooterSection.largeText}</h1>
+                <h4>
+                  <Markdown value={homepageFooterSection.smallText.smallText} />
+                </h4>
+              </div>
+              <img src={homepageFooterSection.image.file.url} />
             </div>
-            <img src={homepageFooterSection.image.file.url} />
           </div>
         </section>
       </main>

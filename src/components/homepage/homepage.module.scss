@@ -59,7 +59,11 @@
   flex-wrap: wrap;
 }
 
-.partnerLogo{
+.columnTitle {
+  margin: 24px 0;
+}
+
+.partnerLogo {
   margin-right: 130px;
   display: flex;
   flex-direction: column;
@@ -71,9 +75,11 @@
 .twoColumn {
   display: grid;
   grid-template-columns: 50% 50%;
+  margin-bottom: 80px;
 }
 
 .threeColumn {
   display: grid;
   grid-template-columns: 33.33% 33.33% 33.33%;
+  margin-bottom: 80px;
 }
