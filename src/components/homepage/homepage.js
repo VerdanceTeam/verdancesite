@@ -106,6 +106,9 @@ const Homepage = () => {
                 url
               }
             }
+            cta {
+              cta
+            }
           }
         }
       }
@@ -198,7 +201,7 @@ const Homepage = () => {
             <h5>what we do</h5>
             <div className={styles.twoColumn}>
               <h2>{homepageWhatWeDoSection.largeText}</h2>
-              <h4 className="whatWeDoSmallText"> {homepageWhatWeDoSection.smallText}</h4>
+              <h4 className={styles.contentAlignBottom}> {homepageWhatWeDoSection.smallText}</h4>
             </div>
             <div className={styles.threeColumn}>
               <div>
@@ -255,7 +258,7 @@ const Homepage = () => {
             </div>
           </div>
         </section>
-        <section className={styles.homepageSection}>
+        <section className={`${styles.homepageSection} ${styles.bottomPaddingFour}`}>
           <div className={styles.homepageSectionContent}>
             <h5>who we work with</h5>
             <h2>{homepagePartnerSection.title}</h2>
@@ -274,10 +277,13 @@ const Homepage = () => {
           <div className={styles.homepageSectionContent}>
             <div className={styles.twoColumn}>
               <div>
-                <h1>{homepageFooterSection.largeText}</h1>
-                <h4>
-                  <Markdown value={homepageFooterSection.smallText.smallText} />
-                </h4>
+                <div className={styles.bottomPaddingTwo}>
+                <img
+                  src={homepageIntroSection.logo.file.url}
+                />
+                </div>
+                  <h4 className={styles.bottomPaddingTwo}>{homepageFooterSection.smallText.smallText}</h4>
+                  <Markdown value={homepageFooterSection.cta.cta} />
               </div>
               <img src={homepageFooterSection.image.file.url} />
             </div>
