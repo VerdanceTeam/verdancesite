@@ -14,13 +14,14 @@ $secondary-yellow: #E5FD52;
 
 // base text styling
 
+
 h1 {
-  font-family: 'UntitledSerif', Arial, sans-serif;
+  font-family: 'UntitledSerif', Times, sans-serif;
   font-size: 134px;
 }
 
 h2 {
-  font-family: 'UntitledSerif', Arial, sans-serif;
+  font-family: 'UntitledSerif', Times, sans-serif;
   font-size: 72px;
   line-height: 110%;
   letter-spacing: -0.05em;
@@ -28,14 +29,14 @@ h2 {
 }
 
 h3 {
-  font-family: 'UntitledSans', Times, serif;
+  font-family: 'UntitledSerif', Times, serif;
   font-size: 32px;
   line-height: 110%;
   letter-spacing: -0.03em;
 }
 
 h4 {
-  font-family: 'UntitledSans', Times, serif;
+  font-family: 'UntitledSans', Arial, serif;
   font-size: 28px;
   line-height: 110%;
 }
@@ -50,7 +51,7 @@ h5 {
 }
 
 p {
-  font-family: 'UntitledSerif', Arial, sans-serif;
+  font-family: 'UntitledSans', Arial, sans-serif;
   font-size: 24px;
   line-height: 130%;
 }

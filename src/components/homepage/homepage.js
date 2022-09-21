@@ -13,6 +13,11 @@ const Homepage = () => {
       allContentfulIntroSection {
         edges {
           node {
+            logo {
+              file {
+                url
+              }
+            }
             id
             largeText
             smallText
@@ -158,7 +163,9 @@ const Homepage = () => {
           <h1
             className={`${styles.homepageSectionContent} ${styles.homepageTitle}`}
           >
-            Verdance
+          <img
+            src={homepageIntroSection.logo.file.url}
+          />
           </h1>
         </section>
         <section className={styles.homepageSection}>
@@ -191,7 +198,7 @@ const Homepage = () => {
             <h5>what we do</h5>
             <div className={styles.twoColumn}>
               <h2>{homepageWhatWeDoSection.largeText}</h2>
-              <h4>{homepageWhatWeDoSection.smallText}</h4>
+              <h4 className="whatWeDoSmallText"> {homepageWhatWeDoSection.smallText}</h4>
             </div>
             <div className={styles.threeColumn}>
               <div>
@@ -238,12 +245,10 @@ const Homepage = () => {
           <div className={styles.homepageSectionContent}>
             <h5>work with us</h5>
             <div className={styles.twoColumn}>
-              <div>
-                <h2>{homepageWorkWithUsSection.title}</h2>
+              <div className="workWithUsColumn">
+                <h2>{homepageWorkWithUsSection.largeText}</h2>
                 <h3>
-                  <Markdown
-                    value={homepageWorkWithUsSection.smallText.smallText}
-                  />
+                  {homepageWorkWithUsSection.smallText.smallText}
                 </h3>
               </div>
               <img src={homepageWorkWithUsSection.image.file.url} />

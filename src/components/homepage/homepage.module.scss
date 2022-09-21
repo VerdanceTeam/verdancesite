@@ -63,8 +63,12 @@
   margin: 24px 0;
 }
 
+.whatWeDoSmallText {
+  padding-top: 165px;
+}
+
 .partnerLogo {
-  margin-right: 130px;
+  margin-right: 100px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -82,4 +86,5 @@
   display: grid;
   grid-template-columns: 33.33% 33.33% 33.33%;
   margin-bottom: 80px;
+  column-gap: 2.5em;
 }
