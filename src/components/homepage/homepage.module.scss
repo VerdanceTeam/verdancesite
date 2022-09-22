@@ -1,5 +1,10 @@
 @import '../../styles/base.scss';
 
+.mainLogo {
+  max-width: 100%;
+  height: auto;
+}
+
 .homepageContent {
   background-color: $primary-grey;
 }

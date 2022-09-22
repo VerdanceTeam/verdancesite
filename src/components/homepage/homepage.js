@@ -167,6 +167,7 @@ const Homepage = () => {
             className={`${styles.homepageSectionContent} ${styles.homepageTitle}`}
           >
           <img
+            className={styles.mainLogo}
             src={homepageIntroSection.logo.file.url}
           />
           </h1>
