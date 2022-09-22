@@ -186,7 +186,7 @@ const Homepage = () => {
                 <Markdown value={homepageIntroSection.cta.cta} />
               </div>
 
-              <h2>{homepageIntroSection.largeText}</h2>
+              <h2 className={`${styles.homepageLargeText} ${styles.introLargeText} ${styles.bottomPaddingOne}`}>{homepageIntroSection.largeText}</h2>
             </div>
           </div>
         </section>
@@ -201,7 +201,7 @@ const Homepage = () => {
           <div className={styles.homepageSectionContent}>
             <h5>what we do</h5>
             <div className={styles.twoColumn}>
-              <h2>{homepageWhatWeDoSection.largeText}</h2>
+              <h2 className={`${styles.homepageLargeText} ${styles.bottomPaddingOne}`} >{homepageWhatWeDoSection.largeText}</h2>
               <h4 className={styles.contentAlignBottom}> {homepageWhatWeDoSection.smallText}</h4>
             </div>
             <div className={styles.threeColumn}>
@@ -250,7 +250,7 @@ const Homepage = () => {
             <h5>work with us</h5>
             <div className={styles.twoColumn}>
               <div className="workWithUsColumn">
-                <h2>{homepageWorkWithUsSection.largeText}</h2>
+                <h2 className={`${styles.homepageLargeText} ${styles.bottomPaddingOne}`}>{homepageWorkWithUsSection.largeText}</h2>
                 <h3>
                   {homepageWorkWithUsSection.smallText.smallText}
                 </h3>
@@ -262,7 +262,7 @@ const Homepage = () => {
         <section className={`${styles.homepageSection} ${styles.bottomPaddingFour}`}>
           <div className={styles.homepageSectionContent}>
             <h5>who we work with</h5>
-            <h2>{homepagePartnerSection.title}</h2>
+            <h2 className={styles.homepageLargeText}>{homepagePartnerSection.title}</h2>
             <div className={styles.partnerLogosContainer}>
               {homepagePartnerSection.partnerLogos.map((item, index) => (
                 <div className={styles.partnerLogo}>

@@ -9,6 +9,20 @@
   background-color: $primary-grey;
 }
 
+
+@media only screen and (max-width: 1200px) {
+  .introLargeText {
+    order: -1;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .homepageLargeText {
+    font-size: 56px;
+  }
+}
+
+
 .homepageTitle {
   // @include paddingBottom()
 }
@@ -84,7 +98,6 @@
   justify-content: center;
 }
 
-// Layout
 
 .twoColumn {
   display: grid;
