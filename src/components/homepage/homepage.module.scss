@@ -73,6 +73,7 @@
 
 .partnerLogo {
   margin-right: 100px;
+  margin-top: 80px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -82,14 +83,14 @@
 
 .twoColumn {
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   margin-bottom: 80px;
   column-gap: 3em;
 }
 
 .threeColumn {
   display: grid;
-  grid-template-columns: 33.33% 33.33% 33.33%;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   margin-bottom: 80px;
   column-gap: 2.5em;
 }
