@@ -14,9 +14,7 @@
   .introLargeText {
     order: -1;
   }
-}
 
-@media only screen and (max-width: 700px) {
   .homepageLargeText {
     font-size: 56px;
   }
@@ -37,6 +35,11 @@
   width: 100%;;
 }
 
+.downArrow {
+  float: right;
+  margin-top: -110px;
+}
+
 .homepageSectionContent {
   width: 100%;
   max-width: $max-content-width;
@@ -52,7 +55,7 @@
 // Padding bottom
 
 .bottomPaddingOne {
-  @include paddingBottom(2)
+  @include paddingBottom(3)
 }
 
 .bottomPaddingTwo {
@@ -103,7 +106,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   margin-bottom: 80px;
-  column-gap: 3em;
+  column-gap: 4em;
 }
 
 .threeColumn {

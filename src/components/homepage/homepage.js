@@ -29,6 +29,11 @@ const Homepage = () => {
             cta {
               cta
             }
+            downArrow {
+              file {
+                url
+              }
+            }
           }
         }
       }
@@ -188,6 +193,10 @@ const Homepage = () => {
 
               <h2 className={`${styles.homepageLargeText} ${styles.introLargeText} ${styles.bottomPaddingOne}`}>{homepageIntroSection.largeText}</h2>
             </div>
+            <img
+                className={`${styles.bottomPaddingOne} ${styles.downArrow}`}
+                src={homepageIntroSection.downArrow.file.url}
+              />
           </div>
         </section>
         <section className={styles.homepageSection}>
