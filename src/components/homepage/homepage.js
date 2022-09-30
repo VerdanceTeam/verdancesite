@@ -18,6 +18,11 @@ const Homepage = () => {
                 url
               }
             }
+            pixelatedLogo {
+              file {
+                url
+              }
+            }
             id
             largeText
             smallText
@@ -171,10 +176,18 @@ const Homepage = () => {
           <h1
             className={`${styles.homepageSectionContent} ${styles.homepageTitle}`}
           >
-          <img
-            className={styles.mainLogo}
-            src={homepageIntroSection.logo.file.url}
-          />
+
+          <div className={styles.mainLogo}>
+            <img
+              className={`${styles.regularLogo}`}
+              src={homepageIntroSection.logo.file.url}
+            />
+            <img
+              className={`${styles.pixelatedLogo}`}
+              src={homepageIntroSection.pixelatedLogo.file.url}
+            />
+          </div>
+
           </h1>
         </section>
         <section className={styles.homepageSection}>
@@ -203,7 +216,7 @@ const Homepage = () => {
           <div
             className={`${styles.homepageSectionContent} ${styles.homepageSectionGreen}`}
           >
-            <img className={styles.heroImage} src={heroImage} />
+            {/* <img className={styles.heroImage} src={heroImage} /> */}
           </div>
         </section>
         <section className={styles.homepageSection}>
@@ -264,7 +277,7 @@ const Homepage = () => {
                   {homepageWorkWithUsSection.smallText.smallText}
                 </h3>
               </div>
-              <img className={styles.mainLogo} src={homepageWorkWithUsSection.image.file.url} />
+              {/* <img className={styles.mainLogo} src={homepageWorkWithUsSection.image.file.url} /> */}
             </div>
           </div>
         </section>
@@ -296,7 +309,7 @@ const Homepage = () => {
                   <h4 className={styles.bottomPaddingTwo}>{homepageFooterSection.smallText.smallText}</h4>
                   <Markdown value={homepageFooterSection.cta.cta} />
               </div>
-              <img className={styles.mainLogo} src={homepageFooterSection.image.file.url} />
+              {/* <img className={styles.mainLogo} src={homepageFooterSection.image.file.url} /> */}
             </div>
           </div>
         </section>
