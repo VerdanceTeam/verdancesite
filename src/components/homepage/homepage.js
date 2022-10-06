@@ -179,11 +179,11 @@ const Homepage = () => {
 
           <div className={styles.mainLogo}>
             <img
-              className={`${styles.regularLogo}`}
+              className={`${styles.logo} ${styles.regularLogo}`}
               src={homepageIntroSection.logo.file.url}
             />
             <img
-              className={`${styles.pixelatedLogo}`}
+              className={`${styles.pixelatedLogo} ${styles.logo}`}
               src={homepageIntroSection.pixelatedLogo.file.url}
             />
           </div>
@@ -302,7 +302,7 @@ const Homepage = () => {
               <div>
                 <div className={styles.bottomPaddingTwo}>
                 <img
-                  className={styles.mainLogo}
+                  className={`${styles.mainLogo} ${styles.logo}`}
                   src={homepageIntroSection.logo.file.url}
                 />
                 </div>

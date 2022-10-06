@@ -1,28 +1,26 @@
 @import '../../styles/base.scss';
 
 .mainLogo {
-  position: relative;
-  max-width: 100%;
+  max-width: 1000px;
   height: auto;
 }
 
-.pixelatedLogo {
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  object-fit: contain;
-  opacity: 0;
-  // transition: opacity .2s;
+.logo {
+  max-width: 45%;
 }
+
+.pixelatedLogo {
+  opacity: 0;
+}
+
 .mainLogo:hover img.pixelatedLogo {
   opacity: 1;
   cursor: pointer;
 }
 
 .mainLogo:hover img.regularLogo {
-  opacity:0;
+  display: none;
+  opacity: 0;
 }
 
 .homepageContent {
