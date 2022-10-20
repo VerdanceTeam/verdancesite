@@ -48,6 +48,12 @@
   }
 }
 
+.introCtaLink {
+  cursor: pointer;
+  text-underline-offset: 6px;
+  text-decoration: underline;
+}
+
 
 .homepageTitle {
   // @include paddingBottom()

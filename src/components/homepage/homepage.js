@@ -8,6 +8,12 @@ import * as styles from './homepage.module.scss';
 import heroImage from '../../images/verdance-hero.jpg';
 
 const Homepage = () => {
+  const ref = useRef(null);
+
+  const handleClick = () => {
+    ref.current?.scrollIntoView({behavior: 'smooth'});
+  };
+
   const dataHomepage = useStaticQuery(graphql`
     {
       allContentfulIntroSection {
@@ -234,9 +240,8 @@ const Homepage = () => {
                 <h4 className={`${styles.bottomPaddingTwo} ${styles.homepageSmallText}`}>
                   {homepageIntroSection.smallText}
                 </h4>
-                <Markdown value={homepageIntroSection.cta.cta} />
+                <p className={styles.introCtaLink} onClick={handleClick}>See open roles</p>
               </div>
-
               <h2 className={`${styles.homepageLargeText} ${styles.introLargeText} ${styles.bottomPaddingOne}`}>{homepageIntroSection.largeText}</h2>
             </div>
             <img
@@ -300,8 +305,9 @@ const Homepage = () => {
         </section>
         <section
           className={`${styles.homepageSection} ${styles.homepageSectionYellow} ${styles.homepageSectionFullWidth}`}
+          ref={ref}
         >
-          <div className={styles.homepageSectionContent} id="work-with-us">
+          <div className={styles.homepageSectionContent}>
             <h5>work with us</h5>
             <div className={styles.twoColumn}>
               <div className="workWithUsColumn">
