@@ -6,8 +6,10 @@
 }
 
 .logo {
-  max-width: 45%;
+  max-width: 50%;
 }
+
+
 
 .pixelatedLogo {
   opacity: 0;
@@ -34,7 +36,15 @@
   }
 
   .homepageLargeText {
-    font-size: 44px;
+    font-size: 36px;
+  }
+
+  .homepageSmallText {
+    font-size: 20px;
+  }
+
+  .logo {
+    max-width: 50%;
   }
 }
 
@@ -50,7 +60,7 @@
 }
 
 .heroImage {
-  width: 100%;;
+  width: 100%;
 }
 
 .downArrow {
@@ -61,7 +71,7 @@
 .homepageSectionContent {
   width: 100%;
   max-width: $max-content-width;
-  margin: 0 64px;
+  margin: 0 20px;
 }
 
 .contentAlignBottom {
@@ -88,6 +98,7 @@
 
 .homepageSectionGreen {
   background-color: $secondary-green;
+  border: 1px solid;
 }
 
 .homepageSectionYellow {

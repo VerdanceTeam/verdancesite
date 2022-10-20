@@ -5,7 +5,7 @@ import Markdown from 'marked-react';
 import { useEffect, useRef, useState, useMemo, useCallback } from 'react';
 import * as styles from './homepage.module.scss';
 
-import heroImage from '../../images/verdance-hero.png';
+import heroImage from '../../images/verdance-hero.jpg';
 
 const Homepage = () => {
   const dataHomepage = useStaticQuery(graphql`
@@ -135,6 +135,39 @@ const Homepage = () => {
     dataHomepage.allContentfulPartnerSection.edges[0].node;
   const homepageFooterSection =
     dataHomepage.allContentfulFooterSection.edges[0].node;
+
+  const mockJobPost = {
+    success: true,
+    results: [
+      {
+        id: 1,
+        title: "Software Engineer",
+        jobId: 1,
+        departmentName: "",
+        teamName: "",
+        locationName: "Remote",
+        employmentType: "Full-time",
+        isListed: true,
+        publishedDate: "",
+        externalLink: "https://www.google.com",
+        locationIds: {}
+      },
+      {
+        id: 2,
+        title: "Senior Software Engineer",
+        jobId: 2,
+        departmentName: "",
+        teamName: "",
+        locationName: "Remote",
+        employmentType: "Full-time",
+        isListed: true,
+        publishedDate: "",
+        externalLink: "https://www.google.com",
+        locationIds: {}
+      }
+    ]
+  };
+  
   return (
     <div>
       <Helmet>
@@ -198,7 +231,7 @@ const Homepage = () => {
                   className={styles.bottomPaddingOne}
                   src={homepageIntroSection.icon.file.url}
                 />
-                <h4 className={styles.bottomPaddingTwo}>
+                <h4 className={`${styles.bottomPaddingTwo} ${styles.homepageSmallText}`}>
                   {homepageIntroSection.smallText}
                 </h4>
                 <Markdown value={homepageIntroSection.cta.cta} />
@@ -216,7 +249,7 @@ const Homepage = () => {
           <div
             className={`${styles.homepageSectionContent} ${styles.homepageSectionGreen}`}
           >
-            {/* <img className={styles.heroImage} src={heroImage} /> */}
+            <img className={styles.heroImage} src={heroImage} />
           </div>
         </section>
         <section className={styles.homepageSection}>
@@ -224,7 +257,7 @@ const Homepage = () => {
             <h5>what we do</h5>
             <div className={styles.twoColumn}>
               <h2 className={`${styles.homepageLargeText} ${styles.bottomPaddingOne}`} >{homepageWhatWeDoSection.largeText}</h2>
-              <h4 className={styles.contentAlignBottom}> {homepageWhatWeDoSection.smallText}</h4>
+              <h4 className={`${styles.homepageSmallText} ${styles.contentAlignBottom}`}> {homepageWhatWeDoSection.smallText}</h4>
             </div>
             <div className={styles.threeColumn}>
               <div className={styles.bottomPaddingTwo}>
@@ -232,7 +265,7 @@ const Homepage = () => {
                 <h3 className={styles.columnTitle}>
                   {homepageWhatWeDoSection.columnOneTitle}
                 </h3>
-                <p>
+                <p className={styles.homepageSmallText}>
                   <Markdown
                     value={homepageWhatWeDoSection.columnOneBody.columnOneBody}
                   />
@@ -243,7 +276,7 @@ const Homepage = () => {
                 <h3 className={styles.columnTitle}>
                   {homepageWhatWeDoSection.columnTwoTitle}
                 </h3>
-                <p>
+                <p className={styles.homepageSmallText}>
                   <Markdown
                     value={homepageWhatWeDoSection.columnTwoBody.columnTwoBody}
                   />
@@ -254,7 +287,7 @@ const Homepage = () => {
                 <h3 className={styles.columnTitle}>
                   {homepageWhatWeDoSection.columnThreeTitle}
                 </h3>
-                <p>
+                <p className={styles.homepageSmallText}>
                   <Markdown
                     value={
                       homepageWhatWeDoSection.columnThreeBody.columnThreeBody
@@ -268,7 +301,7 @@ const Homepage = () => {
         <section
           className={`${styles.homepageSection} ${styles.homepageSectionYellow} ${styles.homepageSectionFullWidth}`}
         >
-          <div className={styles.homepageSectionContent}>
+          <div className={styles.homepageSectionContent} id="work-with-us">
             <h5>work with us</h5>
             <div className={styles.twoColumn}>
               <div className="workWithUsColumn">
@@ -301,10 +334,16 @@ const Homepage = () => {
             <div className={styles.twoColumn}>
               <div>
                 <div className={styles.bottomPaddingTwo}>
-                <img
-                  className={`${styles.mainLogo} ${styles.logo}`}
-                  src={homepageIntroSection.logo.file.url}
-                />
+                  <div className={styles.mainLogo}>
+                    <img
+                        className={`${styles.logo} ${styles.regularLogo}`}
+                        src={homepageIntroSection.logo.file.url}
+                    />
+                    <img
+                      className={`${styles.pixelatedLogo} ${styles.logo}`}
+                      src={homepageIntroSection.pixelatedLogo.file.url}
+                    />
+                  </div>
                 </div>
                   <h4 className={styles.bottomPaddingTwo}>{homepageFooterSection.smallText.smallText}</h4>
                   <Markdown value={homepageFooterSection.cta.cta} />
