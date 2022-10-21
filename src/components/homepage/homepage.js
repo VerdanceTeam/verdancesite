@@ -10,6 +10,16 @@ import heroImage from '../../images/verdance-hero.jpg';
 const Homepage = () => {
   const ref = useRef(null);
 
+  let [openRoles, setOpenRoles] = useState(null);
+
+  // 3. Create out useEffect function
+  useEffect(() => {
+    fetch("https://api.ashbyhq.com/posting-api/job-board/verdance")
+    .then(response => response.json())
+      // 4. Setting *dogImage* to the image url that we received from the response above
+    .then(data => setOpenRoles(data.jobs))
+  },[])
+
   const handleClick = () => {
     ref.current?.scrollIntoView({behavior: 'smooth'});
   };
@@ -95,6 +105,16 @@ const Homepage = () => {
                 url
               }
             }
+            dividerLine {
+              file {
+                url
+              }
+            }
+            rightArrow {
+              file {
+                url
+              }
+            }
           }
         }
       }
@@ -141,38 +161,6 @@ const Homepage = () => {
     dataHomepage.allContentfulPartnerSection.edges[0].node;
   const homepageFooterSection =
     dataHomepage.allContentfulFooterSection.edges[0].node;
-
-  const mockJobPost = {
-    success: true,
-    results: [
-      {
-        id: 1,
-        title: "Software Engineer",
-        jobId: 1,
-        departmentName: "",
-        teamName: "",
-        locationName: "Remote",
-        employmentType: "Full-time",
-        isListed: true,
-        publishedDate: "",
-        externalLink: "https://www.google.com",
-        locationIds: {}
-      },
-      {
-        id: 2,
-        title: "Senior Software Engineer",
-        jobId: 2,
-        departmentName: "",
-        teamName: "",
-        locationName: "Remote",
-        employmentType: "Full-time",
-        isListed: true,
-        publishedDate: "",
-        externalLink: "https://www.google.com",
-        locationIds: {}
-      }
-    ]
-  };
   
   return (
     <div>
@@ -316,7 +304,29 @@ const Homepage = () => {
                   {homepageWorkWithUsSection.smallText.smallText}
                 </h3>
               </div>
-              {/* <img className={styles.mainLogo} src={homepageWorkWithUsSection.image.file.url} /> */}
+              <img className={styles.mainLogo} src={homepageWorkWithUsSection.image.file.url} />
+            </div>
+            <div className={styles.twoColumn}>
+              {/* <div className="rightArrowsColumn">
+                {!openRoles ? "" : openRoles.map((role, index) => (
+                  <img key={index} src={homepageWorkWithUsSection.rightArrow.file.url} />
+                ))}
+              </div> */}
+              <div className="roleInfoColumn">
+                {!openRoles ? "" : openRoles.map((role, index) => (
+                  <div>
+                    <h3 className={styles.bottomPaddingOne}>{role.title}</h3>
+                    <div className={styles.twoColumn}>
+                      <div>
+                        <p>Full-time, {role.location}</p>
+                      </div>
+                      <div>
+                        <a href={role.jobUrl}>Learn more</a>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
