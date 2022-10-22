@@ -9,6 +9,9 @@
   max-width: 50%;
 }
 
+.workWithUsImage {
+  max-width: 600px;
+}
 
 
 .pixelatedLogo {
@@ -46,6 +49,20 @@
   .logo {
     max-width: 50%;
   }
+
+  .workWithUsImage {
+    max-width: 100%;
+  }
+
+  .firstHomepageSection {
+    padding-top: 0px;
+  }
+}
+
+@media only screen and (min-width: 1201px) {
+  .firstHomepageSection {
+    padding-top: 96px;
+  }
 }
 
 .introCtaLink {
@@ -57,6 +74,11 @@
 
 .homepageTitle {
   // @include paddingBottom()
+}
+
+.firstHomepageSection {
+  display: flex;
+  justify-content: center;
 }
 
 .homepageSection {

@@ -199,7 +199,7 @@ const Homepage = () => {
         />
       </Helmet>
       <main className={styles.homepageContent}>
-        <section className={styles.homepageSection}>
+        <section className={`${styles.firstHomepageSection}`}>
           <h1
             className={`${styles.homepageSectionContent} ${styles.homepageTitle}`}
           >
@@ -298,13 +298,13 @@ const Homepage = () => {
           <div className={styles.homepageSectionContent}>
             <h5>work with us</h5>
             <div className={styles.twoColumn}>
-              <div className="workWithUsColumn">
+              <div className={`workWithUsColumn ${styles.bottomPaddingTwo}`}>
                 <h2 className={`${styles.homepageLargeText} ${styles.bottomPaddingOne}`}>{homepageWorkWithUsSection.largeText}</h2>
                 <h3>
                   {homepageWorkWithUsSection.smallText.smallText}
                 </h3>
               </div>
-              <img className={styles.mainLogo} src={homepageWorkWithUsSection.image.file.url} />
+              <img className={styles.workWithUsImage} src={homepageWorkWithUsSection.image.file.url} />
             </div>
             <div className={styles.twoColumn}>
               {/* <div className="rightArrowsColumn">
