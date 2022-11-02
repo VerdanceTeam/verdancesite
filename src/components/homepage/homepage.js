@@ -6,6 +6,7 @@ import { useEffect, useRef, useState, useMemo, useCallback } from 'react';
 import * as styles from './homepage.module.scss';
 
 import heroImage from '../../images/verdance-hero.jpg';
+import jobDivider from '../../images/line-careers.svg';
 
 const Homepage = () => {
   const ref = useRef(null);
@@ -14,14 +15,14 @@ const Homepage = () => {
 
   // 3. Create out useEffect function
   useEffect(() => {
-    fetch("https://api.ashbyhq.com/posting-api/job-board/verdance")
-    .then(response => response.json())
+    fetch('https://api.ashbyhq.com/posting-api/job-board/verdance')
+      .then((response) => response.json())
       // 4. Setting *dogImage* to the image url that we received from the response above
-    .then(data => setOpenRoles(data.jobs))
-  },[])
+      .then((data) => setOpenRoles(data.jobs));
+  }, []);
 
   const handleClick = () => {
-    ref.current?.scrollIntoView({behavior: 'smooth'});
+    ref.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
   const dataHomepage = useStaticQuery(graphql`
@@ -161,7 +162,7 @@ const Homepage = () => {
     dataHomepage.allContentfulPartnerSection.edges[0].node;
   const homepageFooterSection =
     dataHomepage.allContentfulFooterSection.edges[0].node;
-  
+
   return (
     <div>
       <Helmet>
@@ -203,18 +204,16 @@ const Homepage = () => {
           <h1
             className={`${styles.homepageSectionContent} ${styles.homepageTitle}`}
           >
-
-          <div className={styles.mainLogo}>
-            <img
-              className={`${styles.logo} ${styles.regularLogo}`}
-              src={homepageIntroSection.logo.file.url}
-            />
-            <img
-              className={`${styles.pixelatedLogo} ${styles.logo}`}
-              src={homepageIntroSection.pixelatedLogo.file.url}
-            />
-          </div>
-
+            <div className={styles.mainLogo}>
+              <img
+                className={`${styles.logo} ${styles.regularLogo}`}
+                src={homepageIntroSection.logo.file.url}
+              />
+              <img
+                className={`${styles.pixelatedLogo} ${styles.logo}`}
+                src={homepageIntroSection.pixelatedLogo.file.url}
+              />
+            </div>
           </h1>
         </section>
         <section className={styles.homepageSection}>
@@ -225,17 +224,25 @@ const Homepage = () => {
                   className={styles.bottomPaddingOne}
                   src={homepageIntroSection.icon.file.url}
                 />
-                <h4 className={`${styles.bottomPaddingTwo} ${styles.homepageSmallText}`}>
+                <h4
+                  className={`${styles.bottomPaddingTwo} ${styles.homepageSmallText}`}
+                >
                   {homepageIntroSection.smallText}
                 </h4>
-                <p className={styles.introCtaLink} onClick={handleClick}>See open roles</p>
+                <p className={styles.introCtaLink} onClick={handleClick}>
+                  See open roles
+                </p>
               </div>
-              <h2 className={`${styles.homepageLargeText} ${styles.introLargeText} ${styles.bottomPaddingOne}`}>{homepageIntroSection.largeText}</h2>
+              <h2
+                className={`${styles.homepageLargeText} ${styles.introLargeText} ${styles.bottomPaddingOne}`}
+              >
+                {homepageIntroSection.largeText}
+              </h2>
             </div>
             <img
-                className={`${styles.bottomPaddingOne} ${styles.downArrow}`}
-                src={homepageIntroSection.downArrow.file.url}
-              />
+              className={`${styles.bottomPaddingOne} ${styles.downArrow}`}
+              src={homepageIntroSection.downArrow.file.url}
+            />
           </div>
         </section>
         <section className={styles.homepageSection}>
@@ -249,8 +256,17 @@ const Homepage = () => {
           <div className={styles.homepageSectionContent}>
             <h5>what we do</h5>
             <div className={styles.twoColumn}>
-              <h2 className={`${styles.homepageLargeText} ${styles.bottomPaddingOne}`} >{homepageWhatWeDoSection.largeText}</h2>
-              <h4 className={`${styles.homepageSmallText} ${styles.contentAlignBottom}`}> {homepageWhatWeDoSection.smallText}</h4>
+              <h2
+                className={`${styles.homepageLargeText} ${styles.bottomPaddingOne}`}
+              >
+                {homepageWhatWeDoSection.largeText}
+              </h2>
+              <h4
+                className={`${styles.homepageSmallText} ${styles.contentAlignBottom}`}
+              >
+                {' '}
+                {homepageWhatWeDoSection.smallText}
+              </h4>
             </div>
             <div className={styles.threeColumn}>
               <div className={styles.bottomPaddingTwo}>
@@ -299,41 +315,61 @@ const Homepage = () => {
             <h5>work with us</h5>
             <div className={styles.twoColumn}>
               <div className={`workWithUsColumn ${styles.bottomPaddingTwo}`}>
-                <h2 className={`${styles.homepageLargeText} ${styles.bottomPaddingOne}`}>{homepageWorkWithUsSection.largeText}</h2>
-                <h3>
-                  {homepageWorkWithUsSection.smallText.smallText}
-                </h3>
+                <h2
+                  className={`${styles.homepageLargeText} ${styles.bottomPaddingOne}`}
+                >
+                  {homepageWorkWithUsSection.largeText}
+                </h2>
+                <h3>{homepageWorkWithUsSection.smallText.smallText}</h3>
               </div>
-              <img className={styles.workWithUsImage} src={homepageWorkWithUsSection.image.file.url} />
+              <img
+                className={styles.workWithUsImage}
+                src={homepageWorkWithUsSection.image.file.url}
+              />
             </div>
             <div className={styles.twoColumn}>
-              {/* <div className="rightArrowsColumn">
-                {!openRoles ? "" : openRoles.map((role, index) => (
-                  <img key={index} src={homepageWorkWithUsSection.rightArrow.file.url} />
-                ))}
-              </div> */}
-              <div className="roleInfoColumn">
-                {!openRoles ? "" : openRoles.map((role, index) => (
-                  <div>
-                    <h3 className={styles.bottomPaddingOne}>{role.title}</h3>
-                    <div className={styles.twoColumn}>
-                      <div>
-                        <p>Full-time, {role.location}</p>
+              <div>
+                {!openRoles
+                  ? ''
+                  : openRoles.map((role, index) => (
+                      <div className={styles.openRoleContainer}>
+                        <img
+                          className={styles.openRoleArrow}
+                          src={homepageIntroSection.downArrow.file.url}
+                        />
+                        <div className={styles.openRoleContentContainer}>
+                          <h3 className={styles.bottomPaddingOne}>
+                            {role.title}
+                          </h3>
+                          <div className={styles.openRoleContent}>
+                            <div>
+                              <p>Full-time, {role.location}</p>
+                            </div>
+                            <div>
+                              <a href={role.jobUrl}>Learn more</a>
+                            </div>
+                          </div>
+                          {index + 1 !== openRoles.length && (
+                            <img
+                              className={styles.jobDivider}
+                              src={jobDivider}
+                            />
+                          )}
+                        </div>
                       </div>
-                      <div>
-                        <a href={role.jobUrl}>Learn more</a>
-                      </div>
-                    </div>
-                  </div>
-                ))}
+                    ))}
               </div>
             </div>
           </div>
         </section>
-        <section className={`${styles.homepageSection} ${styles.bottomPaddingFour}`}>
+        <section
+          className={`${styles.homepageSection} ${styles.bottomPaddingFour}`}
+        >
           <div className={styles.homepageSectionContent}>
             <h5>who we work with</h5>
-            <h2 className={styles.homepageLargeText}>{homepagePartnerSection.title}</h2>
+            <h2 className={styles.homepageLargeText}>
+              {homepagePartnerSection.title}
+            </h2>
             <div className={styles.partnerLogosContainer}>
               {homepagePartnerSection.partnerLogos.map((item, index) => (
                 <div className={styles.partnerLogo}>
@@ -352,8 +388,8 @@ const Homepage = () => {
                 <div className={styles.bottomPaddingTwo}>
                   <div className={styles.mainLogo}>
                     <img
-                        className={`${styles.logo} ${styles.regularLogo}`}
-                        src={homepageIntroSection.logo.file.url}
+                      className={`${styles.logo} ${styles.regularLogo}`}
+                      src={homepageIntroSection.logo.file.url}
                     />
                     <img
                       className={`${styles.pixelatedLogo} ${styles.logo}`}
@@ -361,10 +397,11 @@ const Homepage = () => {
                     />
                   </div>
                 </div>
-                  <h4 className={styles.bottomPaddingTwo}>{homepageFooterSection.smallText.smallText}</h4>
-                  <Markdown value={homepageFooterSection.cta.cta} />
+                <h4 className={styles.bottomPaddingTwo}>
+                  {homepageFooterSection.smallText.smallText}
+                </h4>
+                <Markdown value={homepageFooterSection.cta.cta} />
               </div>
-              {/* <img className={styles.mainLogo} src={homepageFooterSection.image.file.url} /> */}
             </div>
           </div>
         </section>
