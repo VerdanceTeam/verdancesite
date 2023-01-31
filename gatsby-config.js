@@ -4,8 +4,8 @@ require('dotenv').config({
 
 module.exports = {
   siteMetadata: {
-    title: `Verdance Site`,
-    siteUrl: `https://www.yourdomain.tld`,
+    title: `Verdance`,
+    siteUrl: `https://www.verdance.co/`,
   },
   plugins: [
     {
@@ -24,7 +24,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        icon: 'src/images/icon.png',
+        icon: 'src/images/android-chrome-512x512.png',
       },
     },
     {
