@@ -1,0 +1,229 @@
+@import '../styles/vars.scss';
+
+/**
+ * =================================
+ * Intro Section
+ * =================================
+ */
+
+.columnsContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  column-gap: 4rem;
+
+  .column {
+    flex: 1;
+    display: flex;
+  }
+}
+
+.responsiveColumnContainer {
+  @extend .columnsContainer;
+
+  @include lg {
+    column-gap: 2rem;
+  }
+
+  @include md {
+    flex-direction: column;
+  }
+}
+
+.smallIntroSection {
+  order: 1;
+
+  @include md {
+    order: 2;
+    max-width: 30rem;
+  }
+
+  .leafIcon {
+    @include md {
+      display: none;
+    }
+  }
+}
+
+.largeIntroSection {
+  order: 2;
+
+  @include md {
+    order: 1;
+    max-width: 30rem;
+  }
+}
+
+.introCtaLink {
+  cursor: pointer;
+  text-underline-offset: 6px;
+  text-decoration: underline;
+}
+
+.downArrow {
+  align-self: flex-end;
+}
+
+/**
+ * =================================
+ * Hero Section
+ * =================================
+ */
+
+.heroImage {
+  width: 100%;
+}
+
+.homepageSectionGreen {
+  background-color: $secondary-green;
+  border: 1px solid;
+}
+
+/**
+ * =================================
+ * What We Do Section
+ * =================================
+ */
+
+.whatWeDoColumn {
+  @extend .column;
+
+  flex-direction: column;
+}
+
+/**
+ * =================================
+ * Work With Us Section
+ * =================================
+ */
+
+.homepageSectionYellow {
+  background-color: $secondary-yellow;
+}
+
+.workWithUsImage {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.openRolesList {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+
+  .openRoleListItem {
+    display: flex;
+    flex-direction: row;
+    // maybe make this padding top and bottom
+    margin-bottom: 48px;
+    width: 100%;
+
+    .openRoleArrow {
+      transform: rotate(-90deg);
+      height: 32px;
+      margin-right: 80px;
+
+      @include md {
+        display: none;
+      }
+    }
+  }
+}
+
+.openRoleContentContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.openRoleContent {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+
+  @include sm {
+    flex-direction: column;
+
+    .openRolelearnMoreLink {
+      margin: 1rem 0;
+    }
+  }
+}
+
+.jobDivider {
+  width: 100%;
+}
+
+/**
+ * =================================
+ * Pbetweenartner Section
+ * =================================
+ */
+
+.partnerLogosContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+  column-gap: 2rem;
+  row-gap: 3rem;
+}
+
+.partnerLogo {
+  display: flex;
+
+  img {
+    object-fit: contain;
+  }
+}
+
+/**
+ * =================================
+ * !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ * =================================
+ */
+.columnTitle {
+  margin: 24px 0;
+}
+
+.contentAlignBottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+
+// Padding bottom
+
+.bottomPaddingOne {
+  @include paddingBottom(3)
+}
+
+.bottomPaddingTwo {
+  @include paddingBottom(6)
+}
+
+.bottomPaddingFour {
+  @include paddingBottom(16)
+}
+
+.bottomPaddingFour {
+  @include paddingBottom(16)
+}
+
+
+@media only screen and (max-width: $screen-lg) {
+  .homepageLargeText {
+    font-size: 36px;
+  }
+
+  .homepageSmallText {
+    font-size: 20px;
+  }
+
+  .logo {
+    max-width: 50%;
+  }
+}

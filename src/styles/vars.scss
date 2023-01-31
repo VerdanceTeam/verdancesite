@@ -1,0 +1,40 @@
+$max-content-width: 1440px;
+
+
+// colors
+
+$primary-grey: #D3DAE9;
+$secondary-grey: #B7C2DA;
+$primary-green: #012C12;
+$secondary-green: #66DE66;
+$secondary-yellow: #E5FD52;
+
+$screen-lg: 1024px;
+$screen-md: 768px;
+// $screen-sm: 640px;
+$screen-sm: 425px;
+
+// spacers
+
+@mixin paddingBottom($multiple) {
+  // padding-bottom: #{$multiple * 8}px;
+  padding-bottom: #{$multiple * 0.5}rem;
+}
+
+@mixin lg {
+  @media only screen and (max-width: #{$screen-lg}) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media only screen and (max-width: #{$screen-md}) {
+    @content;
+  }
+}
+
+@mixin sm {
+  @media only screen and (max-width: #{$screen-sm}) {
+    @content;
+  }
+}
