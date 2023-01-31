@@ -1,21 +1,11 @@
 import * as React from 'react';
 import * as styles from './Section.module.scss';
-
-function combineClassNames(classNames = []) {
-  return classNames.join(' ');
-}
+import classnames from 'classnames';
 
 function Section({ children, sectionClassNames = [], contentClassNames = [] }) {
   return (
-    <section
-      className={combineClassNames([styles.section, ...sectionClassNames])}
-    >
-      <div
-        className={combineClassNames([
-          styles.sectionContent,
-          ...contentClassNames,
-        ])}
-      >
+    <section className={classnames(styles.section, sectionClassNames)}>
+      <div className={classnames(styles.sectionContent, contentClassNames)}>
         {children}
       </div>
     </section>
