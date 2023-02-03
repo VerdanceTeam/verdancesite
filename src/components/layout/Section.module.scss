@@ -1,0 +1,12 @@
+@import '../../styles/vars.scss';
+@import './layout.scss';
+
+.section {
+  @extend .layoutContainer;
+  padding-top: 96px;
+}
+
+.sectionContent {
+  @extend .layoutContent;
+}
+

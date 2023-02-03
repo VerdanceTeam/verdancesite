@@ -1,19 +1,25 @@
 @import 'reset.scss';
-
-$max-content-width: 1440px;
-
-
-// colors
-
-$primary-grey: #D3DAE9;
-$secondary-grey: #B7C2DA;
-$primary-green: #012C12;
-$secondary-green: #66DE66;
-$secondary-yellow: #E5FD52;
+@import 'layout.scss';
+@import 'vars.scss';
+//
+// $max-content-width: 1440px;
+//
+//
+// // colors
+//
+// $primary-grey: #D3DAE9;
+// $secondary-grey: #B7C2DA;
+// $primary-green: #012C12;
+// $secondary-green: #66DE66;
+// $secondary-yellow: #E5FD52;
 
 // breakpoints
 
 // base text styling
+
+:root {
+  background-color: $primary-grey;
+}
 
 
 h1 {
@@ -72,9 +78,3 @@ img {
   width: fit-content;
 }
 
-
-// spacers
-
-@mixin paddingBottom($multiple) {
-  padding-bottom: #{$multiple * 8}px;
-}

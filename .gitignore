@@ -1,6 +1,12 @@
+# System
+.DS_Store
+
+# Node/Build
 node_modules/
 .cache/
 public
+
+.env.development
 
 # Local Netlify folder
 .netlify

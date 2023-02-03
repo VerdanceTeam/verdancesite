@@ -1,0 +1,13 @@
+@import '../../styles/vars.scss';
+@import './layout.scss';
+
+.footer {
+  @extend .layoutContainer;
+  background-color: $secondary-grey;
+  padding: 6rem 1.25rem;
+  margin: auto;
+}
+
+.footerContent {
+  @extend .layoutContent;
+}

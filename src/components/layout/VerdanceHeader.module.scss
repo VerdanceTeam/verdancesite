@@ -1,0 +1,25 @@
+.mainLogo {
+  max-width: 1000px;
+  height: auto;
+}
+
+.logo {
+  max-width: 50%;
+}
+
+.regularLogo {
+}
+
+.pixelatedLogo {
+  opacity: 0;
+}
+
+.mainLogo:hover img.pixelatedLogo {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.mainLogo:hover img.regularLogo {
+  opacity: 0;
+  display: none;
+}

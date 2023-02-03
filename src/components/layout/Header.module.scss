@@ -1,0 +1,16 @@
+@import '../../styles/vars.scss';
+@import './layout.scss';
+
+.header {
+  @extend .layoutContainer;
+  margin: auto;
+
+
+  @media only screen and (min-width: $screen-lg) {
+    padding-top: 96px;
+  }
+}
+
+.headerContent {
+  @extend .layoutContent;
+}
