@@ -1,12 +1,13 @@
 @import '../../styles/vars.scss';
 
 .layoutContainer {
-  max-width: $max-content-width;
-  padding: 0 1.25rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
 }
 
 .layoutContent {
-  width: 100%;
+  max-width: $max-content-width;
+  margin: auto;
   display: flex;
   flex-direction: column;
 }
