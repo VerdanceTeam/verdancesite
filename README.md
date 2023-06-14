@@ -13,6 +13,12 @@
     npm run develop
     ```
 
+    > Note: if you get the following error, reach out in #company-website slack to get access
+    ```
+    Invalid plugin options for "gatsby-source-contentful":
+        - "accessToken" is required
+        - "spaceId" is required
+    ```
     From here you can start developing with hot-reloading enabled.
 
 2.  **Open the code and start customizing**
